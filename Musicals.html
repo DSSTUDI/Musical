@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html><head><title>Musicals</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$("#b1").click(function(){
+		$("#summerNights").append('<li>Did you get very far</li>');
+	});
+
+
+	$("li").hover(function(){
+		$(this).css('background-color', 'yellow');
+	}, function() {
+		$(this).css('background-color', 'white');
+	});
+
+
+	$("#b2").click(function(){
+		$('ul:first-of-type > li:last-child').after('<li>Like does he have a car</li>');
+	});
+
+
+	$("#form1")
+          .children(":button")
+          .click(function () {
+            var song = $(this).siblings(":text").first().val();
+            var link = $(this).siblings(":text").last().val();
+
+            $("table tr:last").after("<tr><td>" + song + "</td><td>" + link + "</td></tr>");
+          });
+    });
+
+</script>
+</head>
+<body>
+  <p id="p1">Welcome!</p>
+  <ul id="summerNights">
+    <li>Summer loving had me a blast</li>
+    <li>Summer loving happened so fast</li>
+    <li>I met a girl crazy for me</li>
+    <li>Met a boy cute as can be</li>
+  </ul>
+  <button id="b1">Tell me more, tell me more</button>
+  <button id="b2">Tell me more, tell me more</button>
+  <table border=1>
+    <tr>
+      <th>song</th> <th>link</th>
+    </tr>
+    <tr>
+     <td>Summer Nights</td>
+     <td>https://www.youtube.com/watch?v=ZW0DfsCzfq4</td>
+    </tr>
+  </table>
+  <form id="form1">
+    song: <input type="text"/>
+    link: <input type="text"/>
+    <input type="button" value="add"/>
+  </form>
+</body></html>
